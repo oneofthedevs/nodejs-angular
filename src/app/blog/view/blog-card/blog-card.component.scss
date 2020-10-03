@@ -1,0 +1,30 @@
+article {
+  display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  padding: 20px 30px;
+  transition: 250ms ease-in-out;
+  .details {
+    flex: 1;
+  }
+  .actions {
+    visibility: hidden;
+    display: flex;
+    gap: 0.4rem;
+    i {
+      cursor: pointer;
+    }
+  }
+  .title {
+    font-size: 1.2rem;
+    font-family: "Montserrat";
+    font-weight: 400;
+  }
+
+  &:hover {
+    background: #fff;
+    .actions {
+      visibility: visible;
+    }
+  }
+}

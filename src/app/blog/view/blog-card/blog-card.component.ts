@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Blog } from '../../../shared/models/blog';
+import { BlogService } from '../../../shared/services/blog.service';
 
 @Component({
   selector: 'app-blog-card',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() BlogItem: Blog;
+
+  @Output() fetchAll: EventEmitter<any> = new EventEmitter();
+
+  constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
   }
-
+  // tslint:disable-next-line: typedef
+  async deleteItem() {
+    const res = await this.blogService.Delete(this.BlogItem._id);
+    this.fetchAll.emit(null);
+    console.log(res);
+  }
 }

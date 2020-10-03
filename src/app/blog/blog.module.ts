@@ -5,10 +5,11 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { ViewComponent } from './view/view.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
 import { BlogCardComponent } from './view/blog-card/blog-card.component';
+import { NavbarComponent } from './view/navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [ViewComponent, DashboardComponent, BlogCardComponent],
+  declarations: [ViewComponent, DashboardComponent, BlogCardComponent, NavbarComponent],
   imports: [
     CommonModule,
     BlogRoutingModule
