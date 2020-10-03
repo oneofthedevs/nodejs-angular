@@ -85,7 +85,9 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
-              "../node_modules/bulma/css/bulma.css"
+              "./node_modules/tailwindcss/dist/base.min.css",
+              "./node_modules/tailwindcss/dist/components.min.css",
+              "./node_modules/tailwindcss/dist/utilities.min.css"
             ],
             "scripts": []
           }
