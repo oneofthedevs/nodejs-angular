@@ -1,3 +1,6 @@
 <div class="blog-section pt-5">
   <app-blog-card *ngFor="let item of blogList" [BlogItem]='item' (fetchAll)="FetchAllItems()"></app-blog-card>
 </div>
+<div class="insert-btn">
+  <button class="button is-primary btn" [routerLink]="['./add']">Add new</button>
+</div>

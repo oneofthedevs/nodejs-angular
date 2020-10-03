@@ -1,4 +1,4 @@
-<article>
+<article [routerLink]="['./details']">
   <div class="details">
     <h2 class="title">{{BlogItem.title}}</h2>
   </div>
@@ -6,7 +6,7 @@
     <div class="icon has-text-info">
       <i class="fa fa-pencil"></i>
     </div>
-    <div class="icon has-text-danger" (click)="deleteItem()">
+    <div class="icon has-text-danger" (click)="deleteItem($event)">
       <i class="fa fa-trash"></i>
     </div>
   </div>

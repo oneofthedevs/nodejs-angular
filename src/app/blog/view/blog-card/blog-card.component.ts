@@ -18,9 +18,12 @@ export class BlogCardComponent implements OnInit {
   ngOnInit(): void {
   }
   // tslint:disable-next-line: typedef
-  async deleteItem() {
-    const res = await this.blogService.Delete(this.BlogItem._id);
-    this.fetchAll.emit(null);
-    console.log(res);
+  async deleteItem(event: Event) {
+    event.stopPropagation();
+    if (confirm('You sure wanna delete?')) {
+      const res = await this.blogService.Delete(this.BlogItem._id);
+      this.fetchAll.emit(null);
+      console.log(res);
+    }
   }
 }
