@@ -2,6 +2,7 @@ article {
   display: flex;
   align-items: center;
   transition: 250ms ease-in-out;
+  width: 100%;
   .details {
     flex: 1;
     width: 100%;
@@ -24,8 +25,9 @@ article {
     padding: 0 20px;
     overflow: hidden;
     text-overflow: ellipsis;
-    // white-space: nowrap;
-    width: 100%;
+    white-space: nowrap;
+    width: inherit;
+    width: clamp(10vw, 60vw, 100vw);
   }
 
   &:hover {
