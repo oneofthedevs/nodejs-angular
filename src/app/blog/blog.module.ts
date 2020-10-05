@@ -6,13 +6,17 @@ import { ViewComponent } from './view/view.component';
 import { DashboardComponent } from './view/dashboard/dashboard.component';
 import { BlogCardComponent } from './view/blog-card/blog-card.component';
 import { NavbarComponent } from './view/navbar/navbar.component';
+import { AddComponent } from './view/add/add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ViewComponent, DashboardComponent, BlogCardComponent, NavbarComponent],
+  declarations: [ViewComponent, DashboardComponent, BlogCardComponent, NavbarComponent, AddComponent],
   imports: [
     CommonModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class BlogModule { }

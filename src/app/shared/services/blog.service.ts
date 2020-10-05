@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Blog } from '../models/blog';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +20,12 @@ export class BlogService {
   }
 
   async Post(object: object): Promise<any> {
+    console.log('in Service');
     return await this.http.post(this.baseURL, object).toPromise();
   }
 
-  async Put(object: object): Promise<any> {
-    return await this.http.put(this.baseURL, object).toPromise();
+  async Put(object: Blog, id: string): Promise<any> {
+    return await this.http.put(`${this.baseURL}${id}`, object).toPromise();
 
   }
   async Delete(id: string): Promise<any> {

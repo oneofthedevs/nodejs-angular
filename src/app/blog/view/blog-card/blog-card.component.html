@@ -3,10 +3,10 @@
     <h2 class="title">{{BlogItem.title}}</h2>
   </div>
   <div class="actions">
-    <div class="icon has-text-info">
+    <div class="icons has-background-info has-text-white" [routerLink]="['add', BlogItem._id]" q>
       <i class="fa fa-pencil"></i>
     </div>
-    <div class="icon has-text-danger" (click)="deleteItem($event)">
+    <div class="icons has-background-danger has-text-white" (click)="deleteItem($event)">
       <i class="fa fa-trash"></i>
     </div>
   </div>
