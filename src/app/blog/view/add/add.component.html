@@ -5,21 +5,20 @@
     <!-- <label>Description</label>
     <textarea class="textarea" placeholder="e.g. Hello world" formControlName="description"></textarea> -->
     <label>Priority</label>
-    <span>
+    <!-- <span>
       <div class="select">
         <select formControlName="priority">
           <option selected disabled value="null">Select one</option>
           <option *ngFor="let item of priority" [value]="item.val">{{item.text}}</option>
         </select>
       </div>
-    </span>
-    <span>
+    </span> -->
+    <!-- <span>
       <label class="checkbox">
         Completed
         <input type="checkbox" formControlName="completed" [checked]="newForm.value.isCompleted">
       </label>
-      <!-- <span>{{ checkValue }}</span> -->
-    </span>
+    </span> -->
     <span>
       <input type="submit" class="button is-primary" value="Dew It" [disabled]="!newForm.valid">
     </span>

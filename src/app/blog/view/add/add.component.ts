@@ -28,9 +28,9 @@ export class AddComponent implements OnInit {
   createFrom(): void {
     this.newForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(1)]],
-      // description: ['', []],
-      priority: [null, [Validators.required]],
-      completed: [false, []],
+      smallDesc: [''],
+      description: ['', [Validators.required]],
+      userId: ['', [Validators.required]]
     });
   }
 
@@ -42,18 +42,17 @@ export class AddComponent implements OnInit {
         if (data._id !== null || data.message !== 'Not Found') {
           this.newForm.setValue({
             title: data.title,
-            // description: data.description || '',
-            priority: data.priority,
-            completed: data.completed,
+            description: data.description,
+            smallDesc: data.smallDesc,
+            userId: data.userId._id
           });
         }
       }
     }
     catch (err) {
-      console.log(err);
+      console.error(err);
       this.router.navigate(['add']);
     }
-
   }
 
   submit(): void {
@@ -69,7 +68,6 @@ export class AddComponent implements OnInit {
         console.log('add if');
         this.addIt();
       }
-
     }
   }
 

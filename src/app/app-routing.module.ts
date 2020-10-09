@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { BlogModule } from './blog/blog.module';
+
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './blog/blog.module#BlogModule',
+    loadChildren: () => import('./blog/blog.module').then(a => a.BlogModule),
   },
   {
     path: 'auth',
-    loadChildren: './auth/auth.module#LazyModule'
+    loadChildren: () => import('./auth/auth.module').then(a => a.AuthModule),
   },
   {
     path: '**',

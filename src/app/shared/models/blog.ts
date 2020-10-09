@@ -4,5 +4,6 @@ export class Blog {
   title: string;
   desc: string;
   smalldesc: string;
+  userId: string;
   tags: string[];
 }
