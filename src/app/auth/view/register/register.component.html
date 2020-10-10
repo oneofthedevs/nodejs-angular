@@ -1,1 +1,24 @@
-<p>register works!</p>
+<div class="container">
+  <form class="default-card" autocomplete="off">
+    <h3>Register</h3>
+    <div class="form-fields">
+      <label for="username">Username</label>
+      <input class="input" type="text" name="username">
+    </div>
+    <div class="form-fields">
+      <label for="email">Email</label>
+      <input class="input" type="email" name="email">
+    </div>
+    <div class="form-fields">
+      <label for="password">Password</label>
+      <input class="input" type="password" name="password">
+    </div>
+    <div class="form-fields">
+      <label for="confirmPassword">Confirm Password</label>
+      <input class="input" type="password" name="confirmPassword">
+    </div>
+    <button class="button is-primary">Register yourself</button>
+    <span class="not-link">Already registered? <a class="link" [routerLink]="['login']">Click here and log your ass in
+        MF</a></span>
+  </form>
+</div>

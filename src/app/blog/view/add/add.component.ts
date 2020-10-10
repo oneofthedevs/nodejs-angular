@@ -12,7 +12,7 @@ export class AddComponent implements OnInit {
 
   id: string;
   newForm: FormGroup;
-  priority = [{ val: 1, text: 'Low' }, { val: 2, text: 'Normal' }, { val: 3, text: 'High' },]
+  priority = [{ val: 1, text: 'Low' }, { val: 2, text: 'Normal' }, { val: 3, text: 'High' }];
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private fb: FormBuilder, private blogService: BlogService) { }
 
   ngOnInit(): void {
@@ -27,6 +27,7 @@ export class AddComponent implements OnInit {
 
   createFrom(): void {
     this.newForm = this.fb.group({
+      _id: [''],
       title: ['', [Validators.required, Validators.minLength(1)]],
       smallDesc: [''],
       description: ['', [Validators.required]],
@@ -38,9 +39,9 @@ export class AddComponent implements OnInit {
     try {
       if (this.id !== null) {
         const data = await this.blogService.fetchSigle(this.id);
-        console.log(data);
         if (data._id !== null || data.message !== 'Not Found') {
           this.newForm.setValue({
+            _id: data._id,
             title: data.title,
             description: data.description,
             smallDesc: data.smallDesc,

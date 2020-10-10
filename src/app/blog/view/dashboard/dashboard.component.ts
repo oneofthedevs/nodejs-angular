@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
   // tslint:disable-next-line: typedef
   async FetchAllItems() {
-    console.log('dash fetchall')
+    console.log('dash fetchall');
     const items = await this.blogService.fetchAll();
     this.blogList = items;
   }
