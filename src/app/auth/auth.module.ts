@@ -6,13 +6,18 @@ import { ViewComponent } from './view/view.component';
 import { NavbarComponent } from './view/navbar/navbar.component';
 import { LoginComponent } from './view/login/login.component';
 import { RegisterComponent } from './view/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
   declarations: [NavbarComponent, LoginComponent, RegisterComponent, ViewComponent],
   imports: [
     CommonModule,
-    AuthRoutingModule
-  ]
+    AuthRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [AuthService]
 })
 export class AuthModule { }

@@ -1,15 +1,15 @@
 <div class="container">
-  <form class="default-card" autocomplete="off">
+  <form class="default-card" autocomplete="off" [formGroup]="loginForm" (ngSubmit)="submit()">
     <h3>Login</h3>
     <div class="form-fields">
       <label for="username">Username</label>
-      <input class="input" type="text" name="username">
+      <input class="input" type="text" name="username" formControlName="username">
     </div>
     <div class="form-fields">
       <label for="password">Password</label>
-      <input class="input" type="password" name="password">
+      <input class="input" type="password" name="password" formControlName="password">
     </div>
-    <button class="button is-primary">Login</button>
+    <button class="button is-primary" [disabled]="!loginForm.valid">Login</button>
     <span class="not-link">Don't have an account? What you waiting for? <a class="link" [routerLink]="['login']">Click
         here</a></span>
   </form>

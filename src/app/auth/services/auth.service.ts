@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AuthModule } from '../../auth/auth.module';
 
 @Injectable({
-  providedIn: AuthModule
+  providedIn: 'any'
 })
 export class AuthService {
 
