@@ -4,10 +4,16 @@
     <div class="form-fields">
       <label for="username">Username</label>
       <input class="input" type="text" name="username" formControlName="username">
+      <small class="has-text-danger"
+        *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">This Field is
+        required</small>
     </div>
     <div class="form-fields">
       <label for="password">Password</label>
       <input class="input" type="password" name="password" formControlName="password">
+      <small class="has-text-danger"
+        *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">This Field is
+        required</small>
     </div>
     <button class="button is-primary" [disabled]="!loginForm.valid">Login</button>
     <span class="not-link">Don't have an account? What you waiting for? <a class="link"

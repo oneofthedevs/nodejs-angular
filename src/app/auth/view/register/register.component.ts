@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
       console.log(this.registerForm.value);
     }
     else {
-      console.log('not valid')
+      console.log('not valid');
     }
     // this.http.register()
   }
