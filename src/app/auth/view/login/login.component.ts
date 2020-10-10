@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
   }
 
   async submit(): Promise<void> {
-    const response = await this.http.login(this.loginForm.value);
-    console.log(this.loginForm.value)
     try {
+      const response = await this.http.login(this.loginForm.value);
+      console.log(this.loginForm.value);
       if (response.token) {
         localStorage.setItem('token', response.token);
       }

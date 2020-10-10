@@ -1,24 +1,38 @@
 <div class="container">
-  <form class="default-card" autocomplete="off">
+  <form class="default-card" autocomplete="off" [formGroup]="registerForm" (ngSubmit)="submit()">
     <h3>Register</h3>
     <div class="form-fields">
       <label for="username">Username</label>
-      <input class="input" type="text" name="username">
+      <input class="input" type="text" name="username" formControlName="username">
+      <small class="has-text-danger"
+        *ngIf="registerForm.get('username').hasError('required') && registerForm.get('username').touched">This Field is
+        required</small>
     </div>
     <div class="form-fields">
       <label for="email">Email</label>
-      <input class="input" type="email" name="email">
+      <input class="input" type="email" name="email" formControlName="email">
+      <small class="has-text-danger"
+        *ngIf="registerForm.get('email').hasError('required') && registerForm.get('email').touched">This Field is
+        required</small>
     </div>
     <div class="form-fields">
       <label for="password">Password</label>
-      <input class="input" type="password" name="password">
+      <input class="input" type="password" name="password" formControlName="password">
+      <small class="has-text-danger"
+        *ngIf="registerForm.get('password').hasError('required') && registerForm.get('password').touched">This Field is
+        required</small>
     </div>
     <div class="form-fields">
       <label for="confirmPassword">Confirm Password</label>
-      <input class="input" type="password" name="confirmPassword">
+      <input class="input" type="password" name="confirmPassword" formControlName="confirmPassword">
+      <small class="has-text-danger"
+        *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.get('confirmPassword').touched">This
+        Field is
+        required</small>
     </div>
     <button class="button is-primary">Register yourself</button>
-    <span class="not-link">Already registered? <a class="link" [routerLink]="['login']">Click here and log your ass in
+    <span class="not-link">Already registered? <a class="link" [routerLink]="['../login']">Click here and log your ass
+        in
         MF</a></span>
   </form>
 </div>
